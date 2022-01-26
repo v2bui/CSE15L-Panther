@@ -26,8 +26,11 @@ public class MarkdownParse {
 	    }
             
             if (nextCloseBracket + 1 == openParen) {
-                if (nextOpenBracket == 0 || 
-                    !(markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!"))) {
+                int containsSpace = markdown.substring(openParen + 1, closeParen).indexOf(" ");
+                
+                if ((nextOpenBracket == 0 || 
+                    !(markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")))
+                    && containsSpace == -1) {
                     toReturn.add(markdown.substring(openParen + 1, closeParen));
                 }
             }
