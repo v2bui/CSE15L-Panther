@@ -17,6 +17,11 @@ public class MarkdownParseTest {
         assertTrue(true);
     }
 
+    @Test 
+    public void secondFail() {
+        assertEquals(2*2, 1*2);
+    }
+
     @Test
     public void testFile1() throws IOException {
         Path fileName = Path.of("./test-file.md");
